@@ -23,6 +23,11 @@ int rightPaddleX, rightPaddleY;
 int paddleHeight = 120;
 int paddleWidth = 30;
 
+// set up font
+
+int fontSize = 36;
+int score;
+
 // kinect stuff
 
 import org.openkinect.*;
@@ -45,6 +50,8 @@ void setup() {
   // set up paddles;
   rightPaddleX = width - 100;
   rightPaddleY = height/2 - paddleHeight/2;
+  score = 0;
+  
 }
 
 void draw() {
@@ -93,6 +100,7 @@ void draw() {
   fill(255);
   drawPaddles();  
   animateBall();
+  text(leftScore, fontSize, fontSize);
 }
 
 void keyPressed() {

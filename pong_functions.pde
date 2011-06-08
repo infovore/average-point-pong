@@ -17,16 +17,11 @@ void animateBall() {
     }
   }
   
-  // if it goes off the left hand side
-  if (xPos < 0) {
-    rightScore++;
-    resetBall();
-  }
-  
+
   // if it goes off the right hand side
   
   if (xPos > width) {
-    leftScore++;
+    score++;
     resetBall();
   }
   
