@@ -19,7 +19,7 @@ int leftScore, rightScore;
 
 // set up paddles
 
-int leftPaddleX, rightPaddleX, leftPaddleY, rightPaddleY;
+int rightPaddleX, rightPaddleY;
 int paddleHeight = 120;
 int paddleWidth = 30;
 
@@ -43,9 +43,7 @@ void setup() {
   yPos = 480/2;
   
   // set up paddles;
-  leftPaddleX = 50;
   rightPaddleX = width - 100;
-  leftPaddleY = height/2 - paddleHeight/2;
   rightPaddleY = height/2 - paddleHeight/2;
 }
 
@@ -77,16 +75,18 @@ void draw() {
   // move the paddles
   
   // if lerped x is between paddle x and paddle x + w
-  if((v2.x > rightPaddleX) && (v2.x < (rightPaddleX + paddleWidth))) {
-    // if lerped y is greater thanpaddle Y and less than paddle Y + 25
-    if((v2.y > rightPaddleY) && (v2.y < (rightPaddleY + 25))) {
-      // mpve up
-      rightPaddleY = rightPaddleY + 10;    
-    }
-    
-    if((v2.y < (rightPaddleY + paddleHeight)) && (v2.y > (rightPaddleY + paddleHeight - 25))) {
-      rightPaddleY = rightPaddleY - 10;
-    }
+  if((v2.x > (rightPaddleX -25)) && (v2.x < (rightPaddleX + paddleWidth + 25))) {
+//    // if lerped y is greater thanpaddle Y and less than paddle Y + 25
+//    if((v2.y > rightPaddleY) && (v2.y < (rightPaddleY + 25))) {
+//      // mpve up
+//      rightPaddleY = rightPaddleY + 10;    
+//    }
+//    
+//    if((v2.y < (rightPaddleY + paddleHeight)) && (v2.y > (rightPaddleY + paddleHeight - 25))) {
+//      rightPaddleY = rightPaddleY - 10;
+//    }
+
+    rightPaddleY = int(v2.y - paddleHeight /2 );
   }
   
   // finally, draw the pong stuff

@@ -1,18 +1,17 @@
 void drawPaddles() {
-  rect(leftPaddleX, leftPaddleY, paddleWidth, paddleHeight);
   rect(rightPaddleX, rightPaddleY, paddleWidth, paddleHeight);
 }
 
 void animateBall() {
   
   // if ball is going left
-  if (xDirection < 0) {
+  if (xDirection < 0 && xPos <= 0 ) {
     xDirection = -xDirection;
   } else {
     // if the ball is to the rightof the right paddle
     if (xPos >= rightPaddleX) {
       // if ball is between top and bottom of paddle 
-      if(((rightPaddleY - (paddleHeight/2)) <= yPos) && (yPos <= (rightPaddleY + (paddleHeight/2)))) {
+      if((yPos > rightPaddleY) && (yPos <= (rightPaddleY + paddleHeight))) {
         xDirection = -xDirection;
       }
     }
