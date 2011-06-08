@@ -115,6 +115,9 @@ void keyPressed() {
       tracker.setThreshold(t);
     }
   }
+  if(key == 114) {
+    resetBall();
+  }
 }
 
 void stop() {
