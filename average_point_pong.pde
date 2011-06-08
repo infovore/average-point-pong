@@ -40,7 +40,7 @@ void setup() {
   
   // set up ball
   xPos = width/2;
-  yPos = height/2;
+  yPos = 480/2;
   
   // set up paddles;
   leftPaddleX = 50;
@@ -73,6 +73,21 @@ void draw() {
   int t = tracker.getThreshold();
   fill(0);
   text("threshold: " + t + "    " +  "framerate: " + (int)frameRate + "    " + "UP increase threshold, DOWN decrease threshold",10,500);
+  
+  // move the paddles
+  
+  // if lerped x is between paddle x and paddle x + w
+  if((v2.x > rightPaddleX) && (v2.x < (rightPaddleX + paddleWidth))) {
+    // if lerped y is greater thanpaddle Y and less than paddle Y + 25
+    if((v2.y > rightPaddleY) && (v2.y < (rightPaddleY + 25))) {
+      // mpve up
+      rightPaddleY = rightPaddleY + 10;    
+    }
+    
+    if((v2.y < (rightPaddleY + paddleHeight)) && (v2.y > (rightPaddleY + paddleHeight - 25))) {
+      rightPaddleY = rightPaddleY - 10;
+    }
+  }
   
   // finally, draw the pong stuff
   fill(255);

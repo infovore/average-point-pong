@@ -7,13 +7,7 @@ void animateBall() {
   
   // if ball is going left
   if (xDirection < 0) {
-    // if the ball is to the left of the left paddle
-    if (xPos <= leftPaddleX) {
-      // if ball is between top and bottom of paddle 
-      if(((leftPaddleY - (paddleHeight/2)) <= yPos) && (yPos <= (leftPaddleY + (paddleHeight/2)))) {
-        xDirection = -xDirection;
-      }
-    }
+    xDirection = -xDirection;
   } else {
     // if the ball is to the rightof the right paddle
     if (xPos >= rightPaddleX) {
@@ -37,7 +31,7 @@ void animateBall() {
     resetBall();
   }
   
-  if(yPos + ballSize/2 > height || yPos - ballSize/2 < 0) {
+  if(yPos + ballSize/2 > 480 || yPos - ballSize/2 < 0) {
     yDirection = -yDirection;
   }
   
