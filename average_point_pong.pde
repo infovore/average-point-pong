@@ -1,9 +1,11 @@
-
 // average point pong
 // based on code by
 // Daniel Shiffman
-// Tracking the average location beyond a given depth threshold
-// Thanks to Dan O'Sullivan
+//
+// complete rubbish: wave your hand at the right to make the
+// paddle go up and down. don't miss the ball. "losses" are shown top left.
+//
+// see
 // http://www.shiffman.net
 // https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing
 
